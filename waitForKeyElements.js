@@ -49,8 +49,8 @@ function waitForKeyElements (
 
             if (!alreadyFound) {
                 //--- Call the payload function.
-                actionFunction (jThis);
                 jThis.data ('alreadyFound', true);
+                actionFunction (jThis);
             }
         } );
         btargetsFound   = true;
