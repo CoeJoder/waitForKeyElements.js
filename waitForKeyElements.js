@@ -40,6 +40,7 @@ function waitForKeyElements (
                                            .find (selectorTxt);
 
     if (targetNodes  &&  targetNodes.length > 0) {
+        btargetsFound   = true;
         /*--- Found target node(s).  Go through each and act if they
             are new.
         */
@@ -49,11 +50,13 @@ function waitForKeyElements (
 
             if (!alreadyFound) {
                 //--- Call the payload function.
-                jThis.data ('alreadyFound', true);
-                actionFunction (jThis);
+                var cancelFound     = actionFunction (jThis);
+                if (cancelFound)
+                    btargetsFound   = false;
+                else
+                    jThis.data ('alreadyFound', true);
             }
         } );
-        btargetsFound   = true;
     }
     else {
         btargetsFound   = false;
