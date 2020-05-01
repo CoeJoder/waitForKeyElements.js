@@ -5,3 +5,28 @@ Forked from [the original](https://gist.github.com/BrockA/2625891) with major im
 - does not require jQuery
 - avoids [the quirks](https://www.thecodeship.com/web-development/alternative-to-javascript-evil-setinterval/) associated with `setInterval()`
 - optionally takes a function instead of a string for querying elements on page
+
+## Installation
+Add the following to your userscript's metadata block:
+```javascript
+// @require https://cdn.jsdelivr.net/gh/CoeJoder/waitForKeyElements.js@v1.0/waitForKeyElements.js
+```
+
+## Usage
+### With selector string
+```javascript
+waitForKeyElements("div.comments", (element) => {
+  domElement.innerHTML = "This text inserted by waitForKeyElements().";
+});
+```
+### With selector function
+```javascript
+waitForKeyElements(() => {
+  const iframe = document.querySelector('iframe');
+  if (iframe) {
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    return iframeDoc.querySelectorAll("div.comments");
+  }
+  return null;
+}, callbackFunc);
+```
