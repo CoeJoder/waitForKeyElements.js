@@ -17,7 +17,7 @@ If your userscript was already installed, you'll have to reinstall it to pickup 
 ### With selector string
 ```javascript
 waitForKeyElements("div.comments", (element) => {
-  domElement.innerHTML = "This text inserted by waitForKeyElements().";
+  element.innerHTML = "This text inserted by waitForKeyElements().";
 });
 ```
 ### With selector function
