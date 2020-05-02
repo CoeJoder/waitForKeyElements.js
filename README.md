@@ -11,6 +11,7 @@ Add the following to your userscript's metadata block:
 ```javascript
 // @require https://cdn.jsdelivr.net/gh/CoeJoder/waitForKeyElements.js@v1.0/waitForKeyElements.js
 ```
+If your userscript was already installed, you'll have to reinstall it to pickup the change. See [documentation](https://sourceforge.net/p/greasemonkey/wiki/Metadata_Block/#require).
 
 ## Usage
 ### With selector string
