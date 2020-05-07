@@ -1,5 +1,5 @@
 /**
- * A utility function for userscripts that detects and handled AJAXed content.
+ * A utility function for userscripts that detects and handles AJAXed content.
  *
  * Usage example:
  *
