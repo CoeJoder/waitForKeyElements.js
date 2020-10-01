@@ -1,15 +1,19 @@
 /**
  * A utility function for userscripts that detects and handles AJAXed content.
  *
- * Usage example:
+ * @example
+ * waitForKeyElements("div.comments", (element) => {
+ *   element.innerHTML = "This text inserted by waitForKeyElements().";
+ * });
  *
- *     function callback(domElement) {
- *         domElement.innerHTML = "This text inserted by waitForKeyElements().";
- *     }
- * 
- *     waitForKeyElements("div.comments", callback);
- *     // or
- *     waitForKeyElements(selectorFunction, callback);
+ * waitForKeyElements(() => {
+ *   const iframe = document.querySelector('iframe');
+ *   if (iframe) {
+ *     const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+ *     return iframeDoc.querySelectorAll("div.comments");
+ *   }
+ *   return null;
+ * }, callbackFunc);
  *
  * @param {(string|function)} selectorOrFunction - The selector string or function.
  * @param {function}          callback           - The callback function; takes a single DOM element as parameter.
