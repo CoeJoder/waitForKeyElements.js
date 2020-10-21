@@ -31,3 +31,6 @@ waitForKeyElements(() => {
   return null;
 }, callbackFunc);
 ```
+
+## Additional Resources
+This function is part of the [Greasemonkey Wrench](https://github.com/CoeJoder/GM_wrench) library.
