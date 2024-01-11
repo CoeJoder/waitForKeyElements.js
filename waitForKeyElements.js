@@ -32,6 +32,9 @@ function waitForKeyElements(selectorOrFunction, callback, waitOnce, interval, ma
     if (typeof maxIntervals === "undefined") {
         maxIntervals = -1;
     }
+    if (typeof waitForKeyElements.namespace === "undefined") {
+        waitForKeyElements.namespace = Date.now().toString();
+    }
     var targetNodes = (typeof selectorOrFunction === "function")
             ? selectorOrFunction()
             : document.querySelectorAll(selectorOrFunction);
@@ -39,7 +42,7 @@ function waitForKeyElements(selectorOrFunction, callback, waitOnce, interval, ma
     var targetsFound = targetNodes && targetNodes.length > 0;
     if (targetsFound) {
         targetNodes.forEach(function(targetNode) {
-            var attrAlreadyFound = "data-userscript-alreadyFound";
+            var attrAlreadyFound = `data-userscript-${waitForKeyElements.namespace}-alreadyFound`;
             var alreadyFound = targetNode.getAttribute(attrAlreadyFound) || false;
             if (!alreadyFound) {
                 var cancelFound = callback(targetNode);
