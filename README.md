@@ -9,7 +9,7 @@ Forked from [the original](https://gist.github.com/BrockA/2625891) with major im
 ## Installation
 Add the following to your userscript's metadata block:
 ```javascript
-// @require https://cdn.jsdelivr.net/gh/CoeJoder/waitForKeyElements.js@v1.2/waitForKeyElements.js
+// @require https://cdn.jsdelivr.net/gh/CoeJoder/waitForKeyElements.js@v1.3/waitForKeyElements.js
 ```
 If your userscript was already installed, you'll have to reinstall it to pickup the change. See [documentation](https://sourceforge.net/p/greasemonkey/wiki/Metadata_Block/#require).
 
