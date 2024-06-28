@@ -33,4 +33,4 @@ waitForKeyElements(() => {
 ```
 
 ## Additional Resources
-This function is part of the [Greasemonkey Wrench](https://github.com/CoeJoder/GM_wrench) library.
+If you need a more general purpose polling method, consider using the `wait()` function of [Greasemonkey Wrench](https://github.com/CoeJoder/GM_wrench), a toolbox of userscript utilities.
